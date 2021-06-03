@@ -1,0 +1,240 @@
+$rootColor: #b9b9b9;
+
+body {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+}
+
+#easter-egg {
+  background-image: url("images/cat.png");
+  position: fixed;
+  width: 100px;
+  height: 100px;
+  background-size: contain;
+  background-position: center;
+  right: 0;
+  bottom: 0;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  background-color: transparent;
+  box-shadow: none;
+  &:hover:before,
+  &:focus:before {
+    background-color: transparent;
+  }
+}
+
+.container {
+  width: 1280px;
+  margin: 0 auto;
+}
+
+.list-logo {
+  display: flex;
+  align-items: center;
+  flex-flow: row wrap;
+  justify-content: center;
+  &__img {
+    width: 16.666%;
+    max-height: 105px;
+    object-fit: contain;
+    padding: 0 15px;
+    margin-bottom: 15px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}
+
+.slick-element {
+  padding: 0 30px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  &__img {
+    width: 100%;
+    object-fit: contain;
+    height: 70px;
+    pointer-events: none;
+  }
+}
+
+.slick-active:not(li) {
+  border-right: 2px solid #dedede;
+}
+
+.slick-list .slick-track {
+  display: flex;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: $rootColor;
+}
+
+.align {
+  &-left {
+    text-align: left;
+  }
+  &-center {
+    text-align: center;
+  }
+  &-right {
+    text-align: right;
+  }
+}
+
+.card-calculator {
+  width: 40%;
+  margin: 60px auto;
+  &__img {
+    width: 100%;
+  }
+  &__content {
+    padding: 0 25px 25px 25px;
+  }
+}
+
+.v-alert {
+  position: fixed;
+  top: 10px;
+  width: 60%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  z-index: 100;
+  &__wrapper {
+    text-align: left;
+  }
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+p.card-calculator__info {
+  margin-bottom: 5px;
+}
+
+.v-list {
+  width: 70%;
+  margin: 0 auto;
+  padding: 0;
+  &-item:nth-child(odd) {
+    background: #ededed;
+  }
+}
+
+.more-partners {
+  font-size: 18px;
+}
+
+.v-menu__content {
+  .v-list {
+    width: 100%;
+  }
+}
+
+.color-container {
+  width: 40%;
+  margin-left: auto;
+  padding-top: 20px;
+  &__title {
+    font-weight: bold;
+  }
+  .v-input {
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 960px) {
+  .container {
+    width: 768px;
+  }
+  .card-calculator {
+    width: 50%;
+  }
+  .v-list {
+    width: 80%;
+  }
+  .color-container {
+    width: 55%;
+  }
+}
+
+@media (max-width: 792px) {
+  .container {
+    width: 550px;
+  }
+  .list-logo__img {
+    height: 60px;
+  }
+  .card-calculator {
+    width: 70%;
+  }
+  .v-list {
+    width: 100%;
+  }
+  .color-container {
+    width: 80%;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    width: 100%;
+    padding: 0 20px;
+  }
+  .list-logo__img {
+    width: 33%;
+  }
+  .card-calculator {
+    width: 100%;
+  }
+  .v-list-item {
+    flex-flow: row wrap;
+    padding: 5px 24px 5px 5px;
+    &__content {
+      flex: none;
+      margin-right: 10px;
+      padding: 0;
+    }
+    &:after {
+      content: none;
+    }
+  }
+  .v-application--is-ltr .v-list-item__action:first-child,
+  .v-application--is-ltr .v-list-item__icon:first-child {
+    margin-right: 10px;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+  .v-alert {
+    width: 90%;
+  }
+  .v-application--is-ltr .v-list-item__icon:last-of-type:not(:only-child) {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+  }
+  .color-container {
+    width: 100%;
+  }
+  #easter-egg {
+    width: 60px;
+    height: 60px;
+    bottom: 50%;
+    -webkit-transform: translateY(50%);
+    -moz-transform: translateY(50%);
+    -ms-transform: translateY(50%);
+    -o-transform: translateY(50%);
+    transform: translateY(50%);
+  }
+}
